@@ -1,17 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ComponentsModule } from '@shared/components/components.module';
+import { MatCardModule } from '@angular/material/card';
+import { CityCardComponent } from './components';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    CityCardComponent
+  ],
   imports: [
     CommonModule,
-    ComponentsModule
+
+    MatCardModule
   ],
   exports: [
-    ComponentsModule
+    MatCardModule,
+
+    CityCardComponent
   ]
 })
 export class SharedModule { }

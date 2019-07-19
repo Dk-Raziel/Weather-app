@@ -17,8 +17,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.$citiesInfo = combineLatest(
-      this.weatherService.getWeather('London'),
       this.weatherService.getWeather('Amsterdam'),
+      this.weatherService.getWeather('London'),
       this.weatherService.getWeather('Madrid'),
       this.weatherService.getWeather('Rome'),
       this.weatherService.getWeather('Paris')

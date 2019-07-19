@@ -19,4 +19,6 @@
   </li>
 </ul>
 
-<app-card-holder *ngIf="$citiesInfo | async as cities" [cardsData]="cities"></app-card-holder>
+<div style="display: flex">
+  <app-city-card *ngFor="let city of $citiesInfo | async" [cityInfo]="city"></app-city-card>
+</div>
