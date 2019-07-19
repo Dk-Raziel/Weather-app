@@ -1,6 +1,7 @@
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from '@shared/shared.module';
 
 
 
@@ -9,7 +10,8 @@ import { CommonModule } from '@angular/common';
     HomeComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ]
 })
 export class PublicModule { }

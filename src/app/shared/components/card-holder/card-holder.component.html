@@ -1,0 +1,4 @@
+<!-- Having a container let's me escalate the solution if more card types are needed in the future. Also provides me a way to style from within the component and not the container page -->
+<div class="ch__container">
+  <app-city-card *ngFor="let item of cardsData" [cityInfo]="item"></app-city-card>
+</div>

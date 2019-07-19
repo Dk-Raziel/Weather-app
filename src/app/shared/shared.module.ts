@@ -9,6 +9,9 @@ import { ComponentsModule } from '@shared/components/components.module';
   imports: [
     CommonModule,
     ComponentsModule
+  ],
+  exports: [
+    ComponentsModule
   ]
 })
 export class SharedModule { }
