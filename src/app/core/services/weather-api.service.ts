@@ -13,8 +13,8 @@ export class WeatherApiService {
     private http: HttpClient
   ) { }
 
-  getWeather(): Observable<any> {
-    const auxParams = this.params.set('q', 'London');
+  getWeather(city: string): Observable<any> {
+    const auxParams = this.params.set('q', city);
     return this.http.get(this.url, {params: auxParams});
   }
 }
