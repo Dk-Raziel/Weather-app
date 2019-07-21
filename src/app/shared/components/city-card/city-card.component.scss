@@ -1,3 +1,7 @@
+@import "./src/scss/0_settings/0_variables.scss";
+
+$card-content-txt-val: $font-para-1;
+
 .cc {
   &__card {
     width: 200px;
@@ -10,7 +14,7 @@
   }
   &__content-txt {
     flex: 1;
-    font-family: 'Oswald', sans-serif;
+    font-family: $card-content-txt-val;
     text-align: end;
   }
 }

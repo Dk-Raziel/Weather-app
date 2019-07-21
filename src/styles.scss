@@ -1,4 +1,20 @@
-// Since it's a small project there is yet no need, but as soon as page starts to grow I like to use the ITCSS conventions for styling
-@import "../node_modules/normalize-scss/sass/normalize/import-now";
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
-@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+
+// 0 Settings
+@import "scss/0_settings/0_fonts.scss";
+@import "scss/0_settings/0_variables.scss";
+
+// 1 Tools
+
+// 2 Generics
+@import "scss/2_generics/2_normalize.scss";
+
+// 3 Elements
+
+// 4 Objects
+
+// 5 Components
+
+// 6 Utilities
+
+// 7 Libraries
+@import "scss/7_libraries/7_angular-material.scss";
