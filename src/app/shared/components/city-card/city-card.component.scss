@@ -1,11 +1,16 @@
 .cc {
   &__card {
-    width: 250px;
+    width: 200px;
   }
   &__content-row {
     display: flex;
   }
+  &__content-label {
+    flex: 2;
+  }
   &__content-txt {
     flex: 1;
+    font-family: 'Oswald', sans-serif;
+    text-align: end;
   }
 }

@@ -19,6 +19,8 @@ export class CityCardComponent implements OnInit {
     return ((cityTemps.temp_max + cityTemps.temp_min) / 2).toFixed(0);
   }
 
+  // I wasn't really sure if it was expected of me to use the "original" icons or to use ones with my criteria, like using Fonts Awesome
+  // So I went for the easiest approach and used the original.
   get skyIcon(): string {
     const condition = this.cityInfo.weather[0].icon;
     return `http://openweathermap.org/img/wn/${condition}.png`;

@@ -1,3 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+// Since it's a small project there is yet no need, but as soon as page starts to grow I like to use the ITCSS conventions for styling
 @import "../node_modules/normalize-scss/sass/normalize/import-now";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
