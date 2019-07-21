@@ -5,9 +5,11 @@
     justify-content: center;
     align-items: center;
     min-height: 300px;
+    flex-wrap: wrap;
   }
 
   &__card {
+    margin: 10px 0;
     &:not(:last-child) {
       margin-right: 10px;
     }

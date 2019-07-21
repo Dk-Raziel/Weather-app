@@ -24,7 +24,7 @@ export class CityForecastComponent implements OnInit {
     });
 
 
-    this.chart = new Chart('canvas', {
+    this.chart = new Chart('cf__canvas', {
       type: 'line',
       data: {
         labels: weatherDates,
