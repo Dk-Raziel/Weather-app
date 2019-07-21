@@ -1,6 +1,6 @@
 <div class="h__card-holder">
   <ng-container *ngIf="($citiesInfo | async) as cities; else loadingSpinner">
-    <app-city-card *ngFor="let city of cities" [cityInfo]="city" (click)="test(city.name)" class="h__card">
+    <app-city-card *ngFor="let city of cities" [cityInfo]="city" (click)="getForecast(city.name)" class="h__card">
     </app-city-card>
   </ng-container>
 </div>
@@ -8,3 +8,7 @@
 <ng-template #loadingSpinner>
   <mat-progress-spinner mode="indeterminate"> </mat-progress-spinner>
 </ng-template>
+
+<ng-container *ngIf="$cityForecast | async as forecast">
+  <app-city-forecast [forecastInfo]="forecast"></app-city-forecast>
+</ng-container>

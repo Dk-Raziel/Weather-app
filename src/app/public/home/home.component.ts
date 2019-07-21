@@ -11,6 +11,7 @@ import { WeatherApiService } from '@core/services/weather-api.service';
 })
 export class HomeComponent implements OnInit {
   $citiesInfo: Observable<CityInfo[]>;
+  $cityForecast: Observable<any>;
   constructor(
     private weatherService: WeatherApiService
   ) { }
@@ -25,7 +26,7 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  test(arg: any) {
-    console.log(arg)
+  getForecast(city: string) {
+    this.$cityForecast = this.weatherService.getForecast(city);
   }
 }

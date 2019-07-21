@@ -7,7 +7,7 @@ import { CityInfo } from '@shared/models';
   providedIn: 'root'
 })
 export class WeatherApiService {
-  private url = 'https://api.openweathermap.org/data/2.5/weather';
+  private url = 'https://api.openweathermap.org/data/2.5';
   private params = new HttpParams()
                   .set('APPID', 'fee18f34c8778a20c14306ed2d9e34a9')
                   .set('units', 'metric');
@@ -18,6 +18,11 @@ export class WeatherApiService {
 
   getWeather(city: string): Observable<CityInfo> {
     const auxParams = this.params.set('q', city);
-    return this.http.get<CityInfo>(this.url, { params: auxParams });
+    return this.http.get<CityInfo>(`${this.url}/weather`, { params: auxParams });
+  }
+
+  getForecast(city: string): Observable<any> {
+    const auxParams = this.params.set('q', city);
+    return this.http.get<any>(`${this.url}/forecast`, { params: auxParams });
   }
 }
