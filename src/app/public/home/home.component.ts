@@ -25,4 +25,7 @@ export class HomeComponent implements OnInit {
     );
   }
 
+  test(arg: any) {
+    console.log(arg)
+  }
 }

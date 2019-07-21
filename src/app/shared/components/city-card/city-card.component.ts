@@ -14,4 +14,21 @@ export class CityCardComponent implements OnInit {
   ngOnInit() {
   }
 
+  get averageTemp(): string {
+    const cityTemps = this.cityInfo.main;
+    return ((cityTemps.temp_max + cityTemps.temp_min) / 2).toFixed(0);
+  }
+
+  get skyIcon(): string {
+    const condition = this.cityInfo.weather[0].icon;
+    return `http://openweathermap.org/img/wn/${condition}.png`;
+  }
+
+  get degToCompass() {
+    const wind = this.cityInfo.wind.deg;
+    const val = Math.floor((wind / 22.5) + 0.5);
+    const arr = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW'];
+    return arr[(val % 16)];
+  }
+
 }

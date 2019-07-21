@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule, MatCardModule } from '@angular/material';
 import { CityCardComponent } from './components';
 
 
@@ -12,10 +12,12 @@ import { CityCardComponent } from './components';
   imports: [
     CommonModule,
 
-    MatCardModule
+    MatCardModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     MatCardModule,
+    MatProgressSpinnerModule,
 
     CityCardComponent
   ]
