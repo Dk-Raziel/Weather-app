@@ -1,6 +1,7 @@
 @import "./src/scss/0_settings/0_variables.scss";
 
-$card-content-txt-val: $font-para-1;
+$card-content-txt-val-font: $font-para-1;
+$card-content-txt-val-color: $color-alizarin-crimson;
 
 .cc {
   &__card {
@@ -8,13 +9,24 @@ $card-content-txt-val: $font-para-1;
   }
   &__content-row {
     display: flex;
+    margin-left: 56px;
   }
   &__content-label {
     flex: 2;
   }
+  &__title {
+    color: $card-content-txt-val-color;
+  }
   &__content-txt {
     flex: 1;
-    font-family: $card-content-txt-val;
+    color: $card-content-txt-val-color;
+    font-family: $card-content-txt-val-font;
     text-align: end;
+
+    &--temp {
+      font-size: 30px;
+      margin-bottom: 10px;
+      text-align: left;
+    }
   }
 }
