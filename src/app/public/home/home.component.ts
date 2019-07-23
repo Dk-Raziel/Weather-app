@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { combineLatest, Observable } from 'rxjs';
 
 import { WeatherApiService } from '@core/services/weather-api.service';
+import { CityForecast } from '@shared/models';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ import { WeatherApiService } from '@core/services/weather-api.service';
 })
 export class HomeComponent implements OnInit {
   $citiesInfo: Observable<CityInfo[]>;
-  $cityForecast: Observable<any>;
+  $cityForecast: Observable<CityForecast>;
   constructor(
     private weatherService: WeatherApiService
   ) { }

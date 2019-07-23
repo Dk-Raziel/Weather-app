@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Chart } from 'chart.js';
+import { CityForecast } from '@shared/models';
 
 
 @Component({
@@ -8,7 +9,7 @@ import { Chart } from 'chart.js';
   styleUrls: ['./city-forecast.component.scss']
 })
 export class CityForecastComponent implements OnInit {
-  @Input() forecastInfo: any;
+  @Input() forecastInfo: CityForecast;
   chartInfo: any;
   chart: any;
 

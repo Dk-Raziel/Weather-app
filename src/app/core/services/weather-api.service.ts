@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { CityInfo } from '@shared/models';
+import { CityInfo, CityForecast } from '@shared/models';
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +21,8 @@ export class WeatherApiService {
     return this.http.get<CityInfo>(`${this.url}/weather`, { params: auxParams });
   }
 
-  getForecast(city: string): Observable<any> {
+  getForecast(city: string): Observable<CityForecast> {
     const auxParams = this.params.set('q', city);
-    return this.http.get<any>(`${this.url}/forecast`, { params: auxParams });
+    return this.http.get<CityForecast>(`${this.url}/forecast`, { params: auxParams });
   }
 }
