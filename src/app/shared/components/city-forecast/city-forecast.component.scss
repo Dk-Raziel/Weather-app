@@ -5,8 +5,13 @@ $card-forecast-title-color: $color-alizarin-crimson;
 .cf {
   &__card {
     background-color: whitesmoke;
+    max-width: 1000px;
+    width: 80vw;
   }
   &__title {
     color: $card-forecast-title-color;
+  }
+  &__canvas-container {
+    
   }
 }
