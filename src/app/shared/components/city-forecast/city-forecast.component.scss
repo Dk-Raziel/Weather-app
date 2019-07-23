@@ -1,0 +1,16 @@
+@import "./src/scss/0_settings/0_variables.scss";
+
+$card-forecast-title-color: $color-alizarin-crimson;
+$card-background-color: $color-whitesmoke;
+
+.cf {
+  &__card {
+    background-color: $card-background-color;
+    max-width: 1000px;
+    width: 80vw;
+  }
+  &__title {
+    color: $card-forecast-title-color;
+    text-transform: capitalize;
+  }
+}
