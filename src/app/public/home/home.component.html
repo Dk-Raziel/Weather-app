@@ -5,9 +5,13 @@
       </app-city-card>
     </ng-container>
   </div>
-  <ng-container *ngIf="$cityForecast | async as forecast" >
-    <app-city-forecast [@fadeInOut] [forecastInfo]="forecast" style="background-color: whitesmoke"></app-city-forecast>
-  </ng-container>
+  <div class="h__forecast-holder">
+    <ng-container *ngIf="$cityForecast | async as forecast">
+      <app-city-forecast [@fadeInOut] [forecastInfo]="forecast">
+      </app-city-forecast>
+    </ng-container>
+  </div>
+
 </div>
 
 <ng-template #loadingSpinner>

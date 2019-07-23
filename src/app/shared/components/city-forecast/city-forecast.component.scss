@@ -3,6 +3,9 @@
 $card-forecast-title-color: $color-alizarin-crimson;
 
 .cf {
+  &__card {
+    background-color: whitesmoke;
+  }
   &__title {
     color: $card-forecast-title-color;
   }

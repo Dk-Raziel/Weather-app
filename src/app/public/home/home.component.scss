@@ -10,6 +10,10 @@
     display: flex;
     flex-wrap: wrap;
   }
+  &__forecast-holder {
+    min-height: 501px;
+    width: 900px;
+  }
 
   &__card {
     margin: 10px 0;

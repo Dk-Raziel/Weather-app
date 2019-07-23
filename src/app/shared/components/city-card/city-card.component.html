@@ -2,10 +2,7 @@
   <mat-card-header>
     <img mat-card-avatar [src]="skyIcon">
     <mat-card-title class="cc__title">{{cityInfo.name}}</mat-card-title>
-    <mat-card-subtitle>
-      <div>{{cityInfo.weather[0].description | titlecase}}</div>
-    </mat-card-subtitle>
-    <mat-card-subtitle></mat-card-subtitle>
+    <mat-card-subtitle> {{cityInfo.weather[0].description | titlecase | truncate:[15]}} </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <div class="cc__content-row">
