@@ -37,6 +37,7 @@ export class HomeComponent implements OnInit {
       this.weatherService.getWeather('Rome'),
       this.weatherService.getWeather('Paris')
     );
+    this.$cityForecast = this.weatherService.getForecast('Amsterdam');
   }
 
   getForecast(city: string) {

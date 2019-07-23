@@ -13,6 +13,7 @@
     justify-content: center;
   }
   &__forecast-holder {
+    margin-top: 20px;
     min-height: 584px;
   }
 
@@ -21,5 +22,16 @@
     &:not(:last-child) {
       margin-right: 10px;
     }
+  }
+}
+
+@media (max-width: 650px) {
+  .h__forecast-holder {
+    min-height: 300px;
+  }
+}
+@media (min-width: 650px) and (max-width: 1200px) {
+  .h__forecast-holder {
+    min-height: 500px;
   }
 }

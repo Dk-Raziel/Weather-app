@@ -84,7 +84,7 @@ export class CityForecastObject {
       dt_txt: '2019-07-23 06: 00: 00'
     }
   ];
-  city: {
+  city = {
     id: 2759794,
     name: 'Amsterdam',
     coord: {
