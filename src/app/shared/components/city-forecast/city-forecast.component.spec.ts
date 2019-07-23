@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CityForecastComponent } from './city-forecast.component';
 import { CityForecastObject } from '@shared/models';
+import { MatCardModule } from '@angular/material';
 
 describe('CityForecastComponent', () => {
   let component: CityForecastComponent;
@@ -9,9 +10,10 @@ describe('CityForecastComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CityForecastComponent ]
+      declarations: [CityForecastComponent],
+      imports: [MatCardModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,9 +23,8 @@ describe('CityForecastComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create forecast component', () => {
     expect(component).toBeTruthy();
   });
 
-  // TODO
 });

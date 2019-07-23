@@ -4,9 +4,10 @@ import { HomeComponent } from './home.component';
 import { CityCardComponent, CityForecastComponent } from '@shared/components';
 import { MatProgressSpinnerModule, MatCardModule } from '@angular/material';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { WeatherApiService } from '@core/services/weather-api.service';
 import { of } from 'rxjs';
-import { CityInfoObject } from '@shared/models';
+import { CityInfoObject, CityForecastObject } from '@shared/models';
+import { TruncatePipe } from '@shared/pipes/truncate.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -14,8 +15,8 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [HomeComponent, CityCardComponent, CityForecastComponent],
-      imports: [HttpClientTestingModule, MatProgressSpinnerModule, MatCardModule]
+      declarations: [HomeComponent, CityCardComponent, CityForecastComponent, TruncatePipe],
+      imports: [HttpClientTestingModule, MatProgressSpinnerModule, MatCardModule, BrowserAnimationsModule]
     })
       .compileComponents();
   }));
@@ -43,4 +44,19 @@ describe('HomeComponent', () => {
     fixture.detectChanges();
     expect(compiled.querySelector('app-city-card')).toBeTruthy();
   });
+
+  it('should not display forecast if there is no forecast info', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    component.$cityForecast = null;
+    fixture.detectChanges();
+    expect(compiled.querySelector('app-city-forecast')).toBeFalsy();
+  });
+
+  it('should  display forecast if there is forecast info', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    component.$cityForecast = of(new CityForecastObject());
+    fixture.detectChanges();
+    expect(compiled.querySelector('app-city-forecast')).toBeTruthy();
+  });
+
 });
