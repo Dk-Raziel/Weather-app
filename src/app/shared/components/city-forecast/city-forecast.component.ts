@@ -16,6 +16,10 @@ export class CityForecastComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.drawChart();
+  }
+
+  drawChart() {
     const foreList = this.forecastInfo.list;
     const maxTemp = foreList.map(res => res.main.temp_max);
     const minTemp = foreList.map(res => res.main.temp_min);
@@ -32,17 +36,18 @@ export class CityForecastComponent implements OnInit {
         datasets: [
           {
             data: maxTemp,
-            borderColor: '#3cba9f',
+            borderColor: '#F37335',
             fill: false
           },
           {
             data: minTemp,
-            borderColor: '#ffcc00',
+            borderColor: '#2980B9',
             fill: false
-          },
+          }
         ]
       },
       options: {
+        animations: false,
         responsive: true,
         legend: {
           display: false
@@ -58,5 +63,4 @@ export class CityForecastComponent implements OnInit {
       }
     });
   }
-
 }

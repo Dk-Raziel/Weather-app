@@ -1,11 +1,13 @@
 .h {
+  &__container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   &__card-holder {
     display: flex;
-    background: url('http://news.bbcimg.co.uk/media/images/78290000/jpg/_78290736_dsc_0207.jpg') no-repeat center center fixed;
-    background-size: cover;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     flex-wrap: wrap;
   }
 

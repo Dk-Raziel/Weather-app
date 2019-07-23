@@ -1,5 +1,9 @@
+@import "./src/scss/0_settings/0_variables.scss";
+
+$card-forecast-title-color: $color-alizarin-crimson;
+
 .cf {
-  &__canvas-container {
-    width: 500px;
+  &__title {
+    color: $card-forecast-title-color;
   }
 }
