@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CityForecastComponent } from './city-forecast.component';
-import { CityForecastObject } from '@shared/models';
 import { MatCardModule } from '@angular/material';
+import { cityForecastMock } from '@assets/mocks';
 
 describe('CityForecastComponent', () => {
   let component: CityForecastComponent;
@@ -19,7 +19,7 @@ describe('CityForecastComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CityForecastComponent);
     component = fixture.componentInstance;
-    component.forecastInfo = new CityForecastObject();
+    component.forecastInfo = cityForecastMock;
     fixture.detectChanges();
   });
 

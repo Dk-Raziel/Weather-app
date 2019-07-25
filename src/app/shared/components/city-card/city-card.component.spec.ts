@@ -2,8 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CityCardComponent } from './city-card.component';
 import { MatCardModule } from '@angular/material';
-import { CityInfoObject } from '@shared/models';
 import { TruncatePipe } from '@shared/pipes/truncate.pipe';
+import { cityInfoMock } from '@assets/mocks/';
 
 describe('CityCardComponent', () => {
   let component: CityCardComponent;
@@ -20,7 +20,7 @@ describe('CityCardComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CityCardComponent);
     component = fixture.componentInstance;
-    component.cityInfo = new CityInfoObject();
+    component.cityInfo = cityInfoMock;
     fixture.detectChanges();
   });
 

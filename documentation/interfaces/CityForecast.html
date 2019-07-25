@@ -1,0 +1,448 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>weather documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">weather documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Interfaces</li>
+  <li>CityForecast</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/shared/models/city-forecast/city-forecast.model.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Parameters:</p>
+<p><code>code</code> Internal parameter
+<code>message</code> Internal parameter
+<code>city</code>
+   <code>city.id</code> City ID
+   <code>city.name</code> City name
+   <code>city.coord</code>
+     <code>city.coord.lat</code> City geo location, latitude
+     <code>city.coord.lon</code> City geo location, longitude
+   <code>city.country</code> Country code (GB, JP etc.)
+   <code>city.timezone</code> Shift in seconds from UTC
+<code>cnt</code> Number of lines returned by this API call
+<code>list</code>
+   <code>list.dt</code> Time of data forecasted, unix, UTC
+   <code>list.main</code>
+     <code>list.main.temp</code> Temperature. Unit Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit.
+     <code>list.main.temp_min</code> Minimum temperature at the moment of calculation. This is deviation from &#39;temp&#39; that is possible for large cities and megalopolises geographically expanded (use these parameter optionally). Unit Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit.
+     <code>list.main.temp_max</code> Maximum temperature at the moment of calculation. This is deviation from &#39;temp&#39; that is possible for large cities and megalopolises geographically expanded (use these parameter optionally). Unit Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit.
+     <code>list.main.pressure</code> Atmospheric pressure on the sea level by default, hPa
+     <code>list.main.sea_level</code> Atmospheric pressure on the sea level, hPa
+     <code>list.main.grnd_level</code> Atmospheric pressure on the ground level, hPa
+     <code>list.main.humidity</code> Humidity, %
+     <code>list.main.temp_kf</code> Internal parameter
+   <code>list.weather</code> (more info Weather condition codes)
+     <code>list.weather.id</code> Weather condition id
+     <code>list.weather.main</code> Group of weather parameters (Rain, Snow, Extreme etc.)
+     <code>list.weather.description</code> Weather condition within the group
+     <code>list.weather.icon</code> Weather icon id
+   <code>list.clouds</code>
+     <code>list.clouds.all</code> Cloudiness, %
+   <code>list.wind</code>
+     <code>list.wind.speed</code> Wind speed. Unit Default: meter/sec, Metric: meter/sec, Imperial: miles/hour.
+     <code>list.wind.deg</code> Wind direction, degrees (meteorological)
+   <code>list.rain</code>
+     <code>list.rain.3h</code> Rain volume for last 3 hours, mm
+   <code>list.snow</code>
+     <code>list.snow.3h</code> Snow volume for last 3 hours
+   <code>list.dt_txt</code> Data/time of calculation, UTC</p>
+
+            </p>
+
+
+        <section>
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#city">city</a>
+                                </li>
+                                <li>
+                                        <a href="#cnt">cnt</a>
+                                </li>
+                                <li>
+                                        <a href="#cod">cod</a>
+                                </li>
+                                <li>
+                                        <a href="#list">list</a>
+                                </li>
+                                <li>
+                                        <a href="#message">message</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section>
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="city"></a>
+                                        <span class="name"><b>city</b><a href="#city"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>city:         <code><a href="../interfaces/CityForecastCity.html" target="_self" >CityForecastCity</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="../interfaces/CityForecastCity.html" target="_self" >CityForecastCity</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Forecaste City Information </p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="cnt"></a>
+                                        <span class="name"><b>cnt</b><a href="#cnt"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>cnt:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Number of lines returned by openWeather API call </p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="cod"></a>
+                                        <span class="name"><b>cod</b><a href="#cod"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>cod:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Internal parameter </p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="list"></a>
+                                        <span class="name"><b>list</b><a href="#list"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>list:     <code>CityForecastList[]</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>CityForecastList[]</code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Weather information Forecast Array </p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="message"></a>
+                                        <span class="name"><b>message</b><a href="#message"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>message:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Internal parameter </p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CityForecastList, CityForecastCity } from &#x27;./&#x27;;
+
+/**
+ * Parameters:
+ *
+ * &#x60;code&#x60; Internal parameter
+ * &#x60;message&#x60; Internal parameter
+ * &#x60;city&#x60;
+ *   &#x60;city.id&#x60; City ID
+ *   &#x60;city.name&#x60; City name
+ *   &#x60;city.coord&#x60;
+ *     &#x60;city.coord.lat&#x60; City geo location, latitude
+ *     &#x60;city.coord.lon&#x60; City geo location, longitude
+ *   &#x60;city.country&#x60; Country code (GB, JP etc.)
+ *   &#x60;city.timezone&#x60; Shift in seconds from UTC
+ * &#x60;cnt&#x60; Number of lines returned by this API call
+ * &#x60;list&#x60;
+ *   &#x60;list.dt&#x60; Time of data forecasted, unix, UTC
+ *   &#x60;list.main&#x60;
+ *     &#x60;list.main.temp&#x60; Temperature. Unit Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit.
+ *     &#x60;list.main.temp_min&#x60; Minimum temperature at the moment of calculation. This is deviation from &#x27;temp&#x27; that is possible for large cities and megalopolises geographically expanded (use these parameter optionally). Unit Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit.
+ *     &#x60;list.main.temp_max&#x60; Maximum temperature at the moment of calculation. This is deviation from &#x27;temp&#x27; that is possible for large cities and megalopolises geographically expanded (use these parameter optionally). Unit Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit.
+ *     &#x60;list.main.pressure&#x60; Atmospheric pressure on the sea level by default, hPa
+ *     &#x60;list.main.sea_level&#x60; Atmospheric pressure on the sea level, hPa
+ *     &#x60;list.main.grnd_level&#x60; Atmospheric pressure on the ground level, hPa
+ *     &#x60;list.main.humidity&#x60; Humidity, %
+ *     &#x60;list.main.temp_kf&#x60; Internal parameter
+ *   &#x60;list.weather&#x60; (more info Weather condition codes)
+ *     &#x60;list.weather.id&#x60; Weather condition id
+ *     &#x60;list.weather.main&#x60; Group of weather parameters (Rain, Snow, Extreme etc.)
+ *     &#x60;list.weather.description&#x60; Weather condition within the group
+ *     &#x60;list.weather.icon&#x60; Weather icon id
+ *   &#x60;list.clouds&#x60;
+ *     &#x60;list.clouds.all&#x60; Cloudiness, %
+ *   &#x60;list.wind&#x60;
+ *     &#x60;list.wind.speed&#x60; Wind speed. Unit Default: meter/sec, Metric: meter/sec, Imperial: miles/hour.
+ *     &#x60;list.wind.deg&#x60; Wind direction, degrees (meteorological)
+ *   &#x60;list.rain&#x60;
+ *     &#x60;list.rain.3h&#x60; Rain volume for last 3 hours, mm
+ *   &#x60;list.snow&#x60;
+ *     &#x60;list.snow.3h&#x60; Snow volume for last 3 hours
+ *   &#x60;list.dt_txt&#x60; Data/time of calculation, UTC
+ */
+export interface CityForecast {
+  /** Internal parameter */
+  cod: number;
+
+  /** Internal parameter */
+  message: number;
+
+  /** Number of lines returned by openWeather API call */
+  cnt: number;
+
+  /** Weather information Forecast Array */
+  list: CityForecastList[];
+
+  /** Forecaste City Information */
+  city: CityForecastCity;
+}
+</code></pre>
+    </div>
+</div>
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'CityForecast.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

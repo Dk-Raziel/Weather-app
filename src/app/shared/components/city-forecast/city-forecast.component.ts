@@ -2,23 +2,30 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Chart } from 'chart.js';
 import { CityForecast } from '@shared/models';
 
-
+/**
+ * Will display a Forecast chart using Chart.js with information received via `forecastInfo` input
+ */
 @Component({
   selector: 'app-city-forecast',
   templateUrl: './city-forecast.component.html',
   styleUrls: ['./city-forecast.component.scss']
 })
 export class CityForecastComponent implements OnInit {
+  /** Received a CityForecast object to be displayed as a chart */
   @Input() forecastInfo: CityForecast;
-  chartInfo: any;
-  chart: any;
 
+  /** Chart object configuration */
+  chart: Chart;
+
+  /** @ignore */
   constructor() { }
 
+  /** Draws chart */
   ngOnInit() {
     this.drawChart();
   }
 
+  /** Calculate and maps all the necesary values to populate a Chart Object that will be used to display the temperatures of the city */
   drawChart() {
     const foreList = this.forecastInfo.list;
     const maxTemp = foreList.map(res => res.main.temp_max);

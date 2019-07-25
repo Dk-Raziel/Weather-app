@@ -10,6 +10,11 @@ The app circles arround Angular last version (8 at this moment), Angular Materia
 
 To launch it, download the code, perform a `npm install` and after that `ng serve`, sit back and let the magic flow.
 
+## Documentation
+
+Documentation is already part of the repo, and can be viewed inside the `documentation` folder and opening the `index.html` file,
+but it can be updated (or viewed real time) simply by executing `npm run compodoc` and accessing the served url `http://127.0.0.1:8080`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

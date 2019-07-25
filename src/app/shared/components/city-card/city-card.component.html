@@ -1,12 +1,12 @@
 <mat-card class="cc__card">
   <mat-card-header>
-    <img mat-card-avatar [src]="skyIcon">
+    <img mat-card-avatar [src]="cityInfo.mapped_info.sky_icon_url">
     <mat-card-title class="cc__title">{{cityInfo.name}}</mat-card-title>
-    <mat-card-subtitle> {{cityInfo.weather[0].description | titlecase | truncate:[15]}} </mat-card-subtitle>
+    <mat-card-subtitle> {{cityInfo.weather[0].description | titlecase | truncate:15}} </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <div class="cc__content-row">
-      <span class="cc__content-txt cc__content-txt--temp">{{averageTemp}}ºC</span>
+      <span class="cc__content-txt cc__content-txt--temp">{{cityInfo.mapped_info.average_temp}}ºC</span>
     </div>
     <div class="cc__content-row">
       <span class="cc__content-label">Wind of:</span>
@@ -14,7 +14,7 @@
     </div>
     <div class="cc__content-row">
       <span class="cc__content-label">Wind direction:</span>
-      <span class="cc__content-txt">{{ degToCompass }}</span>
+      <span class="cc__content-txt">{{ cityInfo.mapped_info.compass_direction }}</span>
     </div>
   </mat-card-content>
 </mat-card>

@@ -1,11 +1,14 @@
-import { CityInfo } from '@shared/models/city-info.model';
 import { Component, OnInit } from '@angular/core';
 import { combineLatest, Observable } from 'rxjs';
 import { style, animate, transition, trigger } from '@angular/animations';
 
 import { WeatherApiService } from '@core/services/weather-api.service';
-import { CityForecast } from '@shared/models';
+import { CityForecast, CityInfoFormatted } from '@shared/models';
 
+/** Home and landing page
+ *
+ * Will display a list of City Cards components and when clicked, the chart with temperatures will fetch data for that specific city
+ */
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -23,12 +26,18 @@ import { CityForecast } from '@shared/models';
   ]
 })
 export class HomeComponent implements OnInit {
-  $citiesInfo: Observable<CityInfo[]>;
+  /** Array of CityInfoFormated Observables fetched from the Weather Api Service. handled with combineLatest method */
+  $citiesInfo: Observable<CityInfoFormatted[]>;
+
+  /** CityForecast Observable fetched from the Weather Api Service */
   $cityForecast: Observable<CityForecast>;
+
+  /** @ignore */
   constructor(
     private weatherService: WeatherApiService
   ) { }
 
+  /** Initializing the observables to be used on the component, currently hardcoded. */
   ngOnInit() {
     this.$citiesInfo = combineLatest(
       this.weatherService.getWeather('Amsterdam'),
@@ -40,6 +49,7 @@ export class HomeComponent implements OnInit {
     this.$cityForecast = this.weatherService.getForecast('Amsterdam');
   }
 
+  /** Fetchs the forecast for the city of the interacted card */
   getForecast(city: string) {
     this.$cityForecast = this.weatherService.getForecast(city);
   }
