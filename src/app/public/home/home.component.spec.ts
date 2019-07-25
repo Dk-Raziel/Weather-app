@@ -52,11 +52,17 @@ describe('HomeComponent', () => {
     expect(compiled.querySelector('app-city-forecast')).toBeFalsy();
   });
 
-  it('should  display forecast if there is forecast info', () => {
+  it('should display forecast if there is forecast info', () => {
     const compiled = fixture.debugElement.nativeElement;
     component.$cityForecast = of(cityForecastMock);
     fixture.detectChanges();
     expect(compiled.querySelector('app-city-forecast')).toBeTruthy();
+  });
+
+  it('should properly call the forecast method', () => {
+    component.getForecast('London');
+    fixture.detectChanges();
+    expect(component.$cityForecast).toBeTruthy();
   });
 
 });
